@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>90529 Data Visualisation Homework 1</title>
+    <style type="text/css">
+        #bar-chart rect {
+            fill: green;
+            stroke: #a0a0a0;
+            stroke-width: 0.1;
+            stroke-linecap: round;
+        }
+        
+        #line-chart polyline {
+            stroke: green;
+            stroke-width: 0.1;
+            fill: none;
+            stroke-linecap: round;
+        }
+        
+        #area-chart polyline {
+            stroke: green;
+            stroke-width: 0.1;
+            fill: green;
+            stroke-linecap: round;
+        }
+        
+        #scatterplot svg {
+            border: 2px solid black;
+        }
+        
+        #scatterplot circle {
+            fill: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>
+            90529 Data Visualisation Homework 1
+            <br> S3062182@studenti.unige.it
+            <br> Federico Semprini
+        </h2>
+    </div>
+
+    <div id="bar-chart">
+        <h3>Bar chart</h3>
+        <svg viewBox="0 0 40 12" width="800" height="280">
+            <g transform="translate(0,12)">
+                <g transform="scale(1,-1)">
+                    <g>
+                        <rect width="10" height="1" />
+                        <rect width="8" height="1" y="1" />
+                        <rect width="13" height="1" y="2" />
+                        <rect width="9" height="1" y="3" />
+                        <rect width="11" height="1" y="4" />
+                        <rect width="14" height="1" y="5" />
+                        <rect width="6" height="1" y="6" />
+                        <rect width="4" height="1" y="7" />
+                        <rect width="12" height="1" y="8" />
+                        <rect width="7" height="1" y="9" />
+                        <rect width="5" height="1" y="10" />
+                    </g>
+                    <g transform="translate(20,0)">
+                        <rect width="8.04" height="1" />
+                        <rect width="6.95" height="1" y="1" />
+                        <rect width="7.58" height="1" y="2" />
+                        <rect width="8.81" height="1" y="3" />
+                        <rect width="8.33" height="1" y="4" />
+                        <rect width="9.96" height="1" y="5" />
+                        <rect width="7.24" height="1" y="6" />
+                        <rect width="4.26" height="1" y="7" />
+                        <rect width="10.84" height="1" y="8" />
+                        <rect width="4.82" height="1" y="9" />
+                        <rect width="5.68" height="1" y="10" />
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div id="line-chart">
+        <h3>Line chart</h3>
+        <svg viewBox="0 0 40 15" width="800" height="300">
+            <g transform="translate(0,15)">
+                <g transform="scale(1,-1)">
+                    <polyline points="0,10 1,8 2,13 3,9 4,11 5,14 6,6 7,4 8,12 9,7 10,5" />
+                    <polyline points="0,8.04 1,6.95 2,7.58 3,8.81 4,8.33 5,9.96 6,7.24 7,4.26 8,10.84 9,4.82 10,5.68" transform="translate(20,0)"
+                    />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div id="area-chart">
+        <h3>Area chart</h3>
+        <svg viewBox="0 0 40 15" width="800" height="300">
+            <g transform="translate(0,15)">
+                <g transform="scale(1,-1)">
+                    <polyline points="0,0 0,10 1,8 2,13 3,9 4,11 5,14 6,6 7,4 8,12 9,7 10,5 10,0" />
+                    <polyline points="0,0 0,8.04 1,6.95 2,7.58 3,8.81 4,8.33 5,9.96 6,7.24 7,4.26 8,10.84 9,4.82 10,5.68 10,0" transform="translate(20,0)"
+                    />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div id="scatterplot">
+        <h3>Scatterplot</h3>
+        <svg viewBox="0 0 20 20" width="400" height="400">
+            <g transform="translate(0,20)">
+                <g transform="scale(1,-1)">
+                    <circle cx="10" cy="8.04" r="0.5" />
+                    <circle cx="8" cy="6.95" r="0.5" />
+                    <circle cx="13" cy="7.58" r="0.5" />
+                    <circle cx="9" cy="8.81" r="0.5" />
+                    <circle cx="11" cy="8.33" r="0.5" />
+                    <circle cx="14" cy="9.96" r="0.5" />
+                    <circle cx="6" cy="7.24" r="0.5" />
+                    <circle cx="4" cy="4.26" r="0.5" />
+                    <circle cx="12" cy="10.84" r="0.5" />
+                    <circle cx="7" cy="4.82" r="0.5" />
+                    <circle cx="5" cy="5.68" r="0.5" />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+</body>
+
+</html>

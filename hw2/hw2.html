@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2 Solution</title>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        .barChart {
+            fill: steelblue;
+            stroke: darkgray;
+            stroke-width: 1;
+        }
+        
+        .barChart rect:hover {
+            fill: seagreen;
+        }
+        
+        .lines {
+            stroke: steelblue;
+            fill: none;
+            stroke-width: 1;
+        }
+        
+        .areas {
+            stroke: none;
+            fill: steelblue;
+            stroke-width: 1;
+        }
+        
+        circle {
+            fill: steelblue;
+        }
+        
+        .frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 2px;
+        }
+        /* Styles that clean up the layout;
+         * you can ignore these */
+        
+        div {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 1em;
+        }
+        
+        div,
+        span {
+            padding: 1em;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h3>90529 Data Visualisation - Homework 2</h3>
+    <span>Federico Semprini</span>
+    <span>S3062182@studenti.unige.it </span>
+    <span>3062182</span>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <span>
+    <button id='staircase'>Staircase</button>
+</span>
+
+    <span>
+    <label>Dataset:</label>
+    <select id="dataset">
+        <option value="anscombe_I">Anscombe's Quartet I</option>
+        <option selected value="anscombe_II">Anscombe's Quartet II</option>
+        <option value="anscombe_III">Anscombe's Quartet III</option>
+        <option value="anscombe_IV">Anscombe's Quartet IV</option>
+    </select>
+</span>
+
+    <span>
+    <input type="checkbox" id="random"> Random Subset
+</span>
+
+    <br/>
+
+    <div class="barChart">
+        <h2>Bar Charts</h2>
+        <svg id="bar-chart-a"></svg>
+
+        <svg id="bar-chart-b"></svg>
+    </div>
+
+    <div class="lines">
+        <h2>Line Charts</h2>
+
+        <svg id="line-chart-a"></svg>
+
+        <svg id="line-chart-b"></svg>
+    </div>
+
+    <div class="areas">
+        <h2>Area Charts</h2>
+
+        <svg id="area-chart-a"></svg>
+
+        <svg id="area-chart-b"></svg>
+    </div>
+
+    <div class="circle">
+        <h2>Scatterplot</h2>
+
+        <svg id="scatterplot"></svg>
+    </div>
+</body>
+
+</html>
