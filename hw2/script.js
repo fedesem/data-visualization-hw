@@ -198,6 +198,7 @@ function update(error, data) {
 
     scatterplot.selectAll('circle')
         .on('mouseover', showTooltip)
+        .on('mouseout', hideTooltip)
         .on('click', logCoordinates);
 }
 
@@ -217,13 +218,36 @@ function restoreColor(chart) {
 }
 
 function showTooltip(obj, index, elements) {
+    const scatterplot = d3.select(this.parentNode);
     const coordinates = d3.mouse(this);
-    console.log(coordinates);
-    const scatterplot = d3.select(this.parentNode.parentNode);
-    scatterplot.append('text')
-        .attr('x', coordinates[0])
-        .attr('y', coordinates[1])
-        .text("I'm a label");
+    const g = scatterplot.append('g')
+        .attr('class', 'label');
+
+    const width = 60;
+    const height = 10;
+    let x = coordinates[0] + 10;
+    let y = coordinates[1] + 10;
+
+    if (x + width > 200) x -= width + 20;
+    if (y - height < 0) y += height - 20;
+
+    g.append('rect', 'text')
+        .attr('x', x - 5)
+        .attr('y', y - 8)
+        .attr("width", width)
+        .attr("height", height)
+        .style("fill", "yellow");
+    g.append('text')
+        .attr("text-anchor", "start")
+        .attr('x', x)
+        .attr('y', y)
+        .text("X:" + obj.a + " Y:" + obj.b)
+        .attr("font-size", "10px")
+}
+
+function hideTooltip() {
+    const scatterplot = d3.select(this.parentNode);
+    scatterplot.selectAll('.label').remove();
 }
 
 function logCoordinates(obj, index, elements) {
