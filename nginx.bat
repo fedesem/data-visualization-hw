@@ -1,1 +1,1 @@
-docker run -d -p 80:80 -v "e:/Users/federico/Documents/_documenti/universita'/Specialistica/Data Visualization/lab:/usr/share/nginx/html" --name dv nginx:alpine
+docker run --rm -d -p 80:80 -v "e:/Users/federico/Documents/_documenti/universita'/Specialistica/Data Visualization/lab:/usr/share/nginx/html" --name dv nginx:alpine
